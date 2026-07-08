@@ -20,8 +20,8 @@ jobs:
           pnpm config set '//npm.pkg.github.com/:_authToken' "${{ secrets.GITHUB_TOKEN }}"
           pnpm i
 
-      - name: build
-        run: pnpm build
+      - name: package
+        run: pnpm package
 
       - name: publish
         run: |
