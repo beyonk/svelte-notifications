@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+
+      - name: set up node and pnpm
+        run: |
+          corepack enable
+          pnpm i
